@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Audit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">AI Readiness</div>
+        <nav class="nav">
+            <a href="javascript:void(0)">Solutions</a>
+            <a href="javascript:void(0)">Enterprise</a>
+            <a href="javascript:void(0)">API</a>
+        </nav>
+        <button class="mobile-btn" onclick="toggleMobileMenu()">Menu</button>
+    </header>
+
+    <nav id="mobileMenu" class="mobile-nav">
+        <a href="javascript:void(0)" onclick="toggleMobileMenu()">Solutions</a>
+        <a href="javascript:void(0)" onclick="toggleMobileMenu()">Enterprise</a>
+        <a href="javascript:void(0)" onclick="toggleMobileMenu()">API</a>
+    </nav>
+
+    <div class="container">
+        <div id="inputSection">
+            <h1>Audit your <i>readiness.</i></h1>
+            <p class="sub">Check how easily AI agents can understand and parse your website's core data.</p>
+            <form id="auditForm">
+                <input type="url" id="urlInput" placeholder="Begin by typing URL" required>
+                <button type="submit" class="run">Start Audit</button>
+            </form>
+            <p id="errorMsg" class="hidden" style="color: #ef4444; margin-top: 20px;">Unreachable URL. Try again.</p>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="loader-bar"></div>
+            <p id="loadText">Initializing scan...</p>
+        </div>
+
+        <div id="results" class="hidden">
+            <div class="results-grid">
+                <div class="separator-line"></div>
+                <div class="audit-col" style="animation-delay: 0.2s;">
+                    <div class="big-circle" id="big1">0</div>
+                    <p class="m-label">Overall Readiness</p>
+                    <div class="metrics" id="metrics1">
+                        <div class="metric">
+                            <div class="circle"><svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40"></circle>
+                                </svg><span class="count">22</span></div><span class="m-label">Semantics</span>
+                        </div>
+                        <div class="metric">
+                            <div class="circle"><svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40"></circle>
+                                </svg><span class="count">45</span></div><span class="m-label">Context</span>
+                        </div>
+                        <div class="metric">
+                            <div class="circle"><svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40"></circle>
+                                </svg><span class="count">68</span></div><span class="m-label">Knowledge</span>
+                        </div>
+                        <div class="metric">
+                            <div class="circle"><svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40"></circle>
+                                </svg><span class="count">85</span></div><span class="m-label">Crawl</span>
+                        </div>
+                    </div>
+                    <div class="insight-list" id="list1"></div>
+                </div>
+                <div class="audit-col" style="animation-delay: 0.4s;">
+                    <div class="big-circle" id="big2">0</div>
+                    <p class="m-label">Overall Visibility</p>
+                    <div class="metrics" id="metrics2">
+                        <div class="metric">
+                            <div class="circle"><svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40"></circle>
+                                </svg><span class="count">88</span></div><span class="m-label">Speed</span>
+                        </div>
+                        <div class="metric">
+                            <div class="circle"><svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40"></circle>
+                                </svg><span class="count">92</span></div><span class="m-label">SEO</span>
+                        </div>
+                        <div class="metric">
+                            <div class="circle"><svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40"></circle>
+                                </svg><span class="count">34</span></div><span class="m-label">Authority</span>
+                        </div>
+                        <div class="metric">
+                            <div class="circle"><svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40"></circle>
+                                </svg><span class="count">100</span></div><span class="m-label">Security</span>
+                        </div>
+                    </div>
+                    <div class="insight-list" id="list2"></div>
+                </div>
+            </div>
+            <button onclick="window.location.reload()" class="btn-back">← Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
